@@ -215,9 +215,7 @@ def run():
                             
                             
                             my_list2 = []
-                            #for i in range(len(r['response'])):
-                            #    print(r['response'][i])                                
-                            #print(r['response'][0])
+
                             for i in range(len(r['response'])):
                                 my_list1 = []
                                 my_list1.append(r['response'][i][0])
@@ -254,11 +252,6 @@ def run():
                             
                         elif status == '4':
                             clear()
-                            #CMD = "logout"
-                            #PARAMS = {'username' : USERNAME , 'password' : PASSWORD}
-                            #q = ADDRESS + CMD
-                            #r = requests.post(query , params = PARAMS).json()
-                            #if r['status']:
                             USERNAME = PASSWORD = CMD = API = ""
                             print("loged out successfully")
                             time.sleep(3)
@@ -278,9 +271,6 @@ def run():
                             PARAMS = {"api" : API}
                             r = requests.post(q , PARAMS).json()
                             my_list2 = []
-                            #for i in range(len(r['response'])):
-                            #    print(r['response'][i])                                
-                            #print(r['response'][0])
                             for i in range(len(r['response'])):
                                 my_list1 = []
                                 my_list1.append(r['response'][i][0])
@@ -314,9 +304,7 @@ def run():
                             PARAMS = {"api" : API}
                             r = requests.post(q , PARAMS).json()
                             my_list2 = []
-                            #for i in range(len(r['response'])):
-                            #    print(r['response'][i])                                
-                            #print(r['response'][0])
+
                             for i in range(len(r['response'])):
                                 my_list1 = []
                                 my_list1.append(r['response'][i][0])
@@ -361,9 +349,6 @@ def run():
                             PARAMS = {"api" : API}
                             r = requests.post(q , PARAMS).json()
                             my_list2 = []
-                            #for i in range(len(r['response'])):
-                            #    print(r['response'][i])                                
-                            #print(r['response'][0])
                             for i in range(len(r['response'])):
                                 my_list1 = []
                                 my_list1.append(r['response'][i][0])

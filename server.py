@@ -114,9 +114,7 @@ class signup(BaseHandler):
             query = "insert into user_ (username , password_ , api , role_) values ('{}' , '{}' , '{}' , {})".format(username , password , str(api_token) , 0)
             print(query)
             self.db.execute(query)
-            #print(self.db.fetchone())
             conn.commit()
-            #print(user_id.fetchall())
             output = {'status' : 'True'}
             self.write(output)
         else:
@@ -150,17 +148,6 @@ class login(BaseHandler):
         else:
             output = {"status" : "False"}
             self.write(output)
-"""
-class logout(BaseHandler):
-
-    def post(self , *args , **kwargs):
-        USERNAME = PASSWORD = TOKEN = ""
-        username = self.get_argument('username')
-        password = self.get_argument('password')
-        if self.check_auth(username , password):
-            output = {"status" : "you loged out successfuly"}
-            self.write(output)
-"""
 
 class sendticket(BaseHandler):
 
@@ -187,22 +174,13 @@ class getticketcli(BaseHandler):
         query = "select * from ticket where sender = '{}'".format(TOKEN)
         response = self.db.execute(query)
         response_ = self.db.fetchall()
-        #for i in response_:
-        #    id , sender , body , subject , response , status = i
-
-            #ticket_list.append(i)
-        #response_ = json.dump(dict(response_))
         print(response_)
-        #print(ticket_list)
+        
         output = {
             "response" : response_ ,
         }
         self.write(output)
 
-        """else:
-            output = {"status" : "False"}
-            self.write(output)
-"""
 
 class closeticket(BaseHandler):
 
